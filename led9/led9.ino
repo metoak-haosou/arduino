@@ -6,9 +6,6 @@
 byte red = A1;
 byte green = A2;
 byte blue = A3;
-float sinval;
-int ledval;
-int i;
 void setup()
 {
 	pinMode(red,OUTPUT);

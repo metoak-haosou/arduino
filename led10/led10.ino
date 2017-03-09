@@ -1,14 +1,12 @@
 /*
-*呼吸灯，利用正弦函数
+*随机幻彩灯
 *
 */
 
 byte red = A1;
 byte green = A2;
 byte blue = A3;
-float sinval;
-int ledval;
-int i;
+int seed = 0;
 void setup()
 {
 	pinMode(red,OUTPUT);
@@ -18,13 +16,12 @@ void setup()
 
 void loop()
 {
-	byte i,j,k;
-	for(i=0;i<255;i++)
-		for(j=0;j<255;j++)
-			for(k=0;k<255;k++){
-				analogWrite(red,i);
-				analogWrite(green,j);
-				analogWrite(blue,k);
-				delay(20);
-			}
+	randomSeed(seed);
+	analogWrite(red,seed%255);
+	seed = random(seed);
+	analogWrite(green,seed%255);
+	seed = random(seed);
+	analogWrite(blue,seed%255);
+	seed=seed%4096;
+	delay(20);
 }
