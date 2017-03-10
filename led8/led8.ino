@@ -3,7 +3,7 @@
 *
 */
 
-byte led = 13;
+byte led = 3;
 float sinval;
 int ledval;
 int i;
@@ -18,7 +18,7 @@ void loop()
 		sinval=sin(i*(3.1415/180));
 		ledval=sinval*255;
 		analogWrite(led,ledval);
-		delay(20);
-	} 
-
+		delay(30);
+	}
+	delay(30);
 }
